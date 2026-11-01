@@ -1,0 +1,53 @@
+/* ==============================================================================
+   MR.SALL AI — Right-To-Left (RTL) Arabic Stylesheet
+   Applied automatically when html[dir="rtl"] is set
+   ============================================================================== */
+
+html[dir="rtl"] {
+  font-family: "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+}
+
+html[dir="rtl"] .app-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--apple-border);
+}
+
+html[dir="rtl"] .nav-item-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .sidebar-toggle-btn svg {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .chat-input-actions {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .toast {
+  border-left: 1px solid var(--apple-border);
+  border-right: 4px solid transparent;
+}
+
+html[dir="rtl"] .toast.toast-success { border-right-color: var(--apple-green); }
+html[dir="rtl"] .toast.toast-error { border-right-color: var(--apple-red); }
+html[dir="rtl"] .toast.toast-info { border-right-color: var(--apple-blue); }
+html[dir="rtl"] .toast.toast-warning { border-right-color: var(--apple-orange); }
+
+html[dir="rtl"] .toast-container {
+  right: auto;
+  left: 24px;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .app-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  html[dir="rtl"] .app-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}

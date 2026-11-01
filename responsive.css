@@ -1,0 +1,102 @@
+/* ==============================================================================
+   MR.SALL AI — Responsive Styles
+   Breakpoints: Mobile (< 768px), Tablet (768px - 1024px), Desktop (> 1024px)
+   ============================================================================== */
+
+/* Tablet & Mobile Layout Adjustments */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .page-inner {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-xl);
+    z-index: 999;
+  }
+
+  .app-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Backdrop for mobile drawer */
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  }
+
+  .sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .app-header {
+    padding: 0 16px;
+  }
+
+  .page-inner {
+    padding: 16px;
+  }
+
+  .page-main-title {
+    font-size: 22px;
+  }
+
+  .page-main-subtitle {
+    font-size: 13.5px;
+  }
+
+  /* Chat suggestion cards stack */
+  .chat-suggestions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Two-column splits become single column */
+  .grid-split-2, .studio-layout, .dev-tools-layout, .cyber-layout, .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-crumbs {
+    display: none;
+  }
+
+  .upgrade-pill-btn span {
+    display: none;
+  }
+
+  .upgrade-pill-btn {
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .toast {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
