@@ -1,0 +1,36 @@
+name = "mrsall-ai"
+main = "backend/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Pages Static Assets Directory
+[site]
+bucket = "./frontend"
+
+# Environment Variables & Secrets (Production / Staging)
+[vars]
+ENVIRONMENT = "production"
+DEFAULT_AI_PROVIDER = "gemini" # "gemini" | "openai" | "cf_ai"
+GEMINI_MODEL = "gemini-1.5-flash"
+RATE_LIMIT_FREE_DAILY = 20
+RATE_LIMIT_PREMIUM_DAILY = 1000
+
+# Cloudflare D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "mrsall-ai-d1"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# Cloudflare R2 Storage Bucket Binding
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "mrsall-ai-storage"
+
+# Cloudflare Workers AI Binding (Native Free Edge Inference)
+[ai]
+binding = "AI"
+
+# Cloudflare KV for fast session token cache and rate limiting
+[[kv_namespaces]]
+binding = "KV_SESSIONS"
+id = "00000000000000000000000000000000"

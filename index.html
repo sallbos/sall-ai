@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=frontend/index.html">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <title>MR.SALL AI — Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="MR.SALL AI — All-In-One AI Platform. Intelligence Without Limits. Chat, Image Studio, AI Writing, Developer Tools, Cybersecurity, and Translation." />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>MR.SALL AI — Intelligence Without Limits</title>
+
+  <!-- Favicon using the new logo asset -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+
+  <!-- Apple Design System Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
 </head>
 <body>
-  <script>
-    window.location.replace('frontend/index.html');
-  </script>
+  <!-- App Shell Container -->
+  <div class="app-container">
+    <!-- Sidebar Root -->
+    <aside id="app-sidebar-root" class="app-sidebar"></aside>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <!-- Main Content Viewport -->
+    <div class="app-main">
+      <!-- Header Bar Root -->
+      <header id="app-header-root" class="app-header"></header>
+
+      <!-- Active Page Dynamic Viewport -->
+      <div id="page-viewport" class="page-viewport">
+        <!-- Injected dynamically by Router -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Reusable Toast Stack Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Reusable Modal Overlay Container -->
+  <div id="global-modal-overlay" class="modal-overlay">
+    <div id="global-modal-box" class="modal-box"></div>
+  </div>
+
+  <!-- Application Bootstrap -->
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
